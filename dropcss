@@ -1,0 +1,35 @@
+<template>
+
+    <view>我是占位符</view>
+    <view style="
+    width: 100%;
+    position: relative;
+    background: pink;
+    margin-top: 50px;
+    transform: translate3d(0, 0, 0);">
+        <view @click="toopen">点我展开菜单</view>
+        <view class="child" :style="`${show === true ? 'height: 100px;' : 'height: 0px;'}`">我是菜单
+        </view>
+    </view>
+    <view>我也是占位符</view>
+</template>
+
+<script setup>
+const show = ref(false)
+
+const toopen = () => {
+    show.value = !show.value
+}
+</script>
+
+<style>
+.child {
+    width: 100px;
+
+    position: fixed;
+    top: 20px;
+    background: #6eb390;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+}
+</style>
